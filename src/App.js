@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import firebase from 'firebase'
+import firebase from 'firebase';
+import FileUpload from './FileUpload';
 
 
 class App extends Component {
@@ -8,6 +9,7 @@ class App extends Component {
     super();
     this.state ={
       user: null
+     
     }
     this.handleAuth = this.handleAuth.bind(this)
     this.handleLogout = this.handleLogout.bind(this)
@@ -38,6 +40,7 @@ if(this.state.user){
       <img src={this.state.user.photoURL} alt={this.state.user.displayname}/>
       <h1>Hola {this.state.user.displayName}!</h1>
       <button onClick={this.handleLogout}>SALIR</button>
+      <FileUpload/>
     </div>
   );
 } else {
